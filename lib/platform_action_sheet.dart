@@ -10,10 +10,10 @@ import 'package:flutter/widgets.dart';
 class PlatformActionSheet {
   /// Function to display the sheet
   void displaySheet(
-      {@required BuildContext context,
-      Widget title,
-      Widget message,
-      @required List<ActionSheetAction> actions}) {
+      {required BuildContext context,
+      Widget? title,
+      Widget? message,
+      required List<ActionSheetAction> actions}) {
     if (Platform.isIOS) {
       _showCupertinoActionSheet(context, title, message, actions);
     } else {
@@ -129,8 +129,8 @@ class ActionSheetAction {
 
   /// Construction of an ActionSheetAction
   ActionSheetAction({
-    @required this.text,
-    @required this.onPressed,
+    required this.text,
+    required this.onPressed,
     this.defaultAction = false,
     this.isCancel = false,
     this.hasArrow = false,
